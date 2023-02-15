@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// These must be the first lines in src/index.js
+import 'react-app-polyfill/ie9';
+import 'react-app-polyfill/stable';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from 'react'
+import { createRoot } from 'react-dom/client';
+import App from './components/App'
+import { Provider } from 'react-redux'
+import { store, persistor } from './store'
+import { PersistGate } from 'redux-persist/integration/react'
+
+const container = document.querySelector("#root");
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <Provider store={store}>
+        <PersistGate persistor={persistor}>
+            <App />
+        </PersistGate>
+    </Provider>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

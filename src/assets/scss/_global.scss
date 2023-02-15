@@ -1,0 +1,42 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  overflow-x: hidden;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+img{
+  width: 100%;
+  height: auto;
+  color: transparent;
+}
+
+input, select, label, textarea{
+  display: block;
+}
+
+strong{
+  color: inherit;
+  font-weight: 600;
+}
+
+button{
+  cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+ opacity: 1;
+}
+
+select{
+  padding-top: 8px;
+  appearance: button;
+}

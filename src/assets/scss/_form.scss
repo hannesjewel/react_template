@@ -1,0 +1,97 @@
+._form-row{
+  margin: 30px 0;
+  @media(min-width: $tablet){
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    column-gap: 30px;
+  }
+}
+
+._form-group{
+  width: 100%;
+  text-align: left;
+  ._form-element{
+    width: 100%;
+  }
+}
+
+._form-element{
+  min-height: 40px;
+  border: 1px solid $grey;
+  color: $dark;
+  font-size: 16px;
+  line-height: 26px;
+  font-family: $font;
+  background: transparent;
+  padding-left: 5px;
+}
+
+._error{
+  input, &._checkbox-2 ._checkbox, select, textarea{
+      border: 1px solid red;        
+  }
+}
+
+._error-message{
+  display: block;
+  color: red;
+  text-align: left;
+  padding: 5px 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+._success-message{
+  display: block;
+  color: green;
+  text-align: left;
+  padding: 5px 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+._checkbox-2{
+  ._item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+  }
+  
+  label {
+      display: flex;
+      margin: auto;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+  }
+  
+  input {
+      position: absolute;
+      transform: scale(0);
+  }
+  
+  input:checked ~ ._checkbox {
+      transform: rotate(45deg);
+      width: 14px;
+      height: 28px;
+      margin: 0 7px 0 13px;
+      border-color: $themeColor;
+      border-width: 3px;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-radius: 0;
+      background-color: transparent;
+  }
+  
+  ._checkbox {
+      display: block;
+      width: inherit;
+      height: inherit;
+      border: 1px solid $grey;
+      background-color: $dark;
+      border-radius: 0px;
+      transition: all 0.2s cubic-bezier(0, 0.01, 0.23, 0.8);
+  }
+}

@@ -1,0 +1,115 @@
+body{
+  font-family: $font;
+  color: $dark;
+  font-size: 16px;
+}
+
+._section{
+  @include topBottomSpacing;
+}
+
+p{
+  color: $dark;
+  font-size: 1rem;
+  line-height: 1.6rem;
+}
+
+._heading-1{
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.3rem;
+  @media(min-width: $tablet){
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  @media(min-width: $laptop){
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+  }
+}
+
+._heading-2{
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.8rem;
+  @media(min-width: $tablet){
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+  }
+  @media(min-width: $laptop){
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+}
+
+._button{
+  font-family: $font;
+  background-color: $themeColor;
+  color: #fff;
+  min-height: 50px;
+  display: inline-block;
+  border: none;
+  font-weight: 600;
+  padding: 12px 20px;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  min-width: 168px;
+}
+
+._hamburger-icon{
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  > div {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      span{
+          position: absolute;
+          height: 1px;
+          width: 100%;
+          background-color: $themeColor;
+          left: 50%;
+          transform: translateX(-50%);
+          @include transition(0.25s);
+          &:nth-of-type(1){
+              top: 13px;
+          }
+          &:nth-of-type(2){
+              bottom: 13px;
+          }
+      }
+  }
+  &._close{
+      span{
+          @include transition(0.25s);
+          &:nth-of-type(1){
+              top: 50%;
+              transform: translate(-50%, -50%) rotate(45deg);
+          }
+          &:nth-of-type(2){
+              bottom: unset;
+              top: 50%;
+              transform: translate(-50%, -50%) rotate(-45deg);
+          }
+      }
+  }
+}
+
+._horline{
+  width: 100px;
+  height: 1px;
+  background-color: $light;
+}
+
+._social-icons{
+  display: flex;
+  align-items: center;
+  padding: 30px 0;
+  column-gap: 15px;
+}
